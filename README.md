@@ -19,6 +19,19 @@
    ```console
    $ sudo apt-get install curl 
    ```
+   
+   <h3>Git</h3>
+   Install the latest version of <a href="https://git-scm.com/downloads" target="blank">Git</a> , if not already installed.
+   
+   ```console
+   $ sudo apt-get install git 
+   ```
+   
+   <h3>Docker Desktop</h3>
+   Install the latest version of <a href="https://docs.docker.com/get-docker/" target="blank">Docker Desktop</a> , if it is not already installed.
+   
+   <h3>WSL2 (Windows Subsytem for Linux 2)</h3>
+   Install a Linux distribution such as Ubuntu-20.04 and make sure it’s set to using version 2 of WSL. Refer to <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="blank">Install WSL</a> for more information.
     
    
   
