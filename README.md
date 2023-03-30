@@ -38,8 +38,18 @@
    >**_NOTE 📝_**
    ><h4> Challenges faced during installation </h4>
    >
-   > * WSL has to be of version 2 instead of version 1 to support Docker desktop integration. Hence, if the system has WSL1 installed it has to be upgraded to WSL2. To upgrade, the upgrade the user needs to download the latest WSL 2 kernel update package and enable it through PowerShell or CMD.
+   > * **WSL has to be of version 2 instead of version 1** to support Docker desktop integration. Hence, if the system has WSL1 installed it has to be upgraded to WSL2. To upgrade, the upgrade the user needs to download the latest WSL 2 kernel update package and enable it through PowerShell or CMD.
    > ```$ wsl --set-version <distro-name> 2``` replacing <distro name> with the name of the Linux distribution that you want to update. For example, wsl --set-version Ubuntu-20.04 2 will set your Ubuntu 20.04 distribution to use WSL 2.
+   > * **Virtualization has to be enabled** in the BIOS to make WSL 2 work: WSL 2 requires hardware virtualization to work correctly. If the system has hardware virtualization disabled in the BIOS, WSL2 will not function correctly and **Docker Desktop will not run. The user must: 
+   >   * Reboot the computer.
+   >   * Tap F10 or Esc during Loadup to enter BIOS.
+   >   * Search for configuration items related to CPU.
+   >   * Enable virtualization; the setting may be called VT-x, AMD-V, SVM, or Vanderpool.
+   > * Hyper-V has to be enabled to make Docker Desktop to work with WSL2 integration : Docker Destop for Windows relies on Hyper-V, Microsoft's Virtualization technology, to run containers. If Hyper-V is not enabled, Docker Desktop will not start. To enable Hyper-V, the user has to:
+   >   * Search for "Windows Features" in the start menu.
+   >   * Select "Turn Windows Features on or off" and turn it on.
+   >   * Reboot the system.
+   
    
     
    
