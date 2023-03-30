@@ -45,7 +45,7 @@
    >   * Tap F10 or Esc during Loadup to enter BIOS.
    >   * Search for configuration items related to CPU.
    >   * Enable virtualization; the setting may be called VT-x, AMD-V, SVM, or Vanderpool.
-   > * Hyper-V has to be enabled to make Docker Desktop to work with WSL2 integration : Docker Destop for Windows relies on Hyper-V, Microsoft's Virtualization technology, to run containers. If Hyper-V is not enabled, Docker Desktop will not start. To enable Hyper-V, the user has to:
+   > * **Hyper-V has to be enabled** to make Docker Desktop to work with WSL2 integration : Docker Destop for Windows relies on Hyper-V, Microsoft's Virtualization technology, to run containers. If Hyper-V is not enabled, Docker Desktop will not start. To enable Hyper-V, the user has to:
    >   * Search for "Windows Features" in the start menu.
    >   * Select "Turn Windows Features on or off" and turn it on.
    >   * Reboot the system.
