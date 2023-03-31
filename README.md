@@ -50,6 +50,17 @@
    >   * Select "Turn Windows Features on or off" and turn it on.
    >   * Reboot the system.
    
+   ## Setting up the test network
+   
+   <h3> 1) Install the fabric samples, docker images and binaries </h3>
+   
+   * Prepare a working directory - for example, ```$HOME/src/scripts``` directory to download the scripts and open the directory.
+   > ```console
+   >$ mkdir $HOME/src/scripts
+   >$ cd $ HOME/src/scripts
+   >```
+   
+   
    
     
    
