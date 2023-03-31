@@ -70,7 +70,16 @@
   >./install-fabric.sh docker samples binary
   >or
   >./install-fabric.sh d s b
-  ```
+  >```
+  
+  <div align=center>
+    
+  ![Screenshot (3)](https://user-images.githubusercontent.com/129254225/229087630-58620f28-52fd-4722-b984-0eb0bf78df93.png)
+    
+  </div>
+  
+  <p align=center> Installing samples and binaries </p> </center>
+  
    
     
    
