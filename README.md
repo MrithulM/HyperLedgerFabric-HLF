@@ -54,12 +54,16 @@
    
    <h3> 1) Install the fabric samples, docker images and binaries </h3>
    
-   * Prepare a working directory - for example, ```$HOME/src/scripts``` directory to download the scripts and open the directory.
+   * Prepare a working directory - for example, **```$HOME/src/scripts```** directory to download the scripts and open the directory.
    > ```console
    >$ mkdir $HOME/src/scripts
    >$ cd $ HOME/src/scripts
    >```
-   
+   * Curl the install scripts and execute them with **chmod** command.
+  
+  >```console 
+  >$ curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh && chmod +x install-fabric.sh 
+  >```
    
    
     
