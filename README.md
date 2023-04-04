@@ -70,15 +70,29 @@
   >./install-fabric.sh docker samples binary
   >or
   >./install-fabric.sh d s b
-  >```
+  >```<br/>
+  * **`docker (d)`**: to use Docker to download the Fabric Container Images<br/>
+  * **`binary (b)`**: to download the Fabric binaries<br/>
+  * **`samples (s)`**: to clone the fabric-samples github repo to the current directory<br/>
   
   <div align=center>
     
-  ![Screenshot (3)](https://user-images.githubusercontent.com/129254225/229087630-58620f28-52fd-4722-b984-0eb0bf78df93.png)
+  ![Screenshot (4)](https://user-images.githubusercontent.com/129254225/229087729-24e74bb4-ddf7-4c15-a09c-ab56838a3a69.png)
     
   </div>
+  <br/>
+  The above command initializes the fabric setup with all the necessary base that are required to work with. Start the test network to confirm whether the setup is properly installed.<br/><br/>
   
-  <p align=center> Installing samples and binaries </p> </center>
+  The scripts that bring up the test network are present in the `test-network` directory of the `fabric-samples`repository. Now open the directory:
+  
+  ```console
+  $ cd fabric-samples/test-network
+  ```
+  In the directory, find a script file named `network.sh` - this script file is used to spin up/terminate all the docker containers that are needed for the fabric netowork.
+  
+  
+  
+  
   
    
     
