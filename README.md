@@ -83,12 +83,33 @@
   <br/>
   The above command initializes the fabric setup with all the necessary base that are required to work with. Start the test network to confirm whether the setup is properly installed.<br/><br/>
   
+  <h3> 2) Run the test network </h3>
+  
   The scripts that bring up the test network are present in the `test-network` directory of the `fabric-samples`repository. Now open the directory:
   
   ```console
   $ cd fabric-samples/test-network
   ```
   In the directory, find a script file named `network.sh` - this script file is used to spin up/terminate all the docker containers that are needed for the fabric netowork.
+  
+  ```console
+  $ cd ./network.sh down
+  ```
+  This command removes any containers that are present or running from the previous runs.
+  
+  Now to start the test-network, Enter:
+  
+  ```console
+  $ cd ./network.sh up
+  ```
+  This creates a Fabric-network that consists of two peer nodes, one ordering node
+  
+  ![Screenshot (5)](https://user-images.githubusercontent.com/129254225/229087740-2aa3d9cb-c514-4a61-85cb-cf64c0f9b285.png)
+  
+  In the above image, `peer0.org1.example.com` and `peer0.org2.example.com` are the two peer node containers and `orderer.example.com` is the orderer node container and `cli` is the command line that interacts with the fabric network and helps in chaincode deployment.
+  
+  
+  
   
   
   
