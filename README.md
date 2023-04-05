@@ -90,6 +90,12 @@
   
   </div>
   
+  The bin folder contains the following important binary files:
+  * configtxgen  
+  * configtxlator  
+  * cryptogen  
+  * peer
+  
   <h3> 2) Run the test network </h3>
   
   The scripts that bring up the test network are present in the `test-network` directory of the `fabric-samples` repository. Now open the directory:
