@@ -94,7 +94,11 @@
   * configtxgen  
   * configtxlator  
   * cryptogen  
-  * peer
+  <br/>
+  
+  **`configtxgen`** allows users/orderers to create and inspect channel configuration settings. 
+  **`configrxlator`**  provides a true stateless REST API, to simplify configuration tasks in Hyperledger Fabric blockchain networks. 
+  **`cryptogen`** provides the necessary certificates to work on a dev environment before deploying it on production. 
   
   <h3> 2) Run the test network </h3>
   
