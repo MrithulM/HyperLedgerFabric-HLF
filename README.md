@@ -83,9 +83,16 @@
   <br/>
   The above command initializes the fabric setup with all the necessary base that are required to work with. Start the test network to confirm whether the setup is properly installed.<br/><br/>
   
+  The most important files that are required to run the peer and orderer nodes are '**bin**' and '**config**'. <br/><br/>
+  <div align=center>
+  
+  ![Screenshot (13)](https://user-images.githubusercontent.com/129254225/230036745-d0783a90-4297-49ba-8120-8ae4cc8dbe71.png)
+  
+  </div>
+  
   <h3> 2) Run the test network </h3>
   
-  The scripts that bring up the test network are present in the `test-network` directory of the `fabric-samples`repository. Now open the directory:
+  The scripts that bring up the test network are present in the `test-network` directory of the `fabric-samples` repository. Now open the directory:
   
   ```console
   $ cd fabric-samples/test-network
@@ -107,6 +114,26 @@
   ![Screenshot (5)](https://user-images.githubusercontent.com/129254225/229087740-2aa3d9cb-c514-4a61-85cb-cf64c0f9b285.png)
   
   In the above image, `peer0.org1.example.com` and `peer0.org2.example.com` are the two peer node containers and `orderer.example.com` is the orderer node container and `cli` is the command line that interacts with the fabric network and helps in chaincode deployment.
+  
+  <h3>Channels</h3> 
+  
+  **Channels** are a type of subnet that allows a private connection between two or more organizations that allows transactions to happen between them. Each transaction on the network requires authentication and authorization. This is done on a channel where each party is identified by a Membership Service Provider(MSP).
+  When creating a new channel, confidential information is stored on the `channel ledger`, including the details about the polices, members, and the anchor peers.
+  
+  To create a new channel - Type 
+  ```console
+  ./network.sh createChannel -c {channel name}
+  ```
+  
+  ![Screenshot (6)](https://user-images.githubusercontent.com/129254225/229087745-f7f21bb7-c1ca-4782-8592-0784154c5739.png)
+  
+  
+  
+  
+  
+  
+
+  
   
   
   
