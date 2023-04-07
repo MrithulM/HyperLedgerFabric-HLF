@@ -1,0 +1,14 @@
+.card {
+  margin: 5px 0px;
+  margin-left: 120px;
+  padding: 10px 10px;
+  background-color: rgb(122, 147, 230);
+  width: 50%;
+  border-radius: 5px;
+}
+.card h4 {
+  padding: 10px 0px;
+}
+.details-container {
+  padding: 10px 15px;
+}

@@ -1,0 +1,7 @@
+.card-holder {
+  margin: 10px 5px;
+  padding: 10px 10px;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 4fr);
+}
