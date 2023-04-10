@@ -1,7 +1,24 @@
 import React from "react";
 import "./AddCar.css";
+import axios from "axios";
 
 export default function AddCar() {
+  const addCarHandler = async () => {
+    const carid = prompt("Enter car id").toUpperCase();
+    const make = prompt("model");
+    const model = prompt("name");
+    const colour = prompt("color");
+    const owner = prompt("owner");
+
+    const details = { carid, make, model, colour, owner };
+    try {
+      await axios.post("http://4.246.223.78:8080/api/addcar", details);
+      console.log("Added car!");
+      alert("Added car!");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <fieldset className="field">
       <legend>Add a Car</legend>
@@ -21,7 +38,7 @@ export default function AddCar() {
       <input type="text" id="owner" name="owner" />
       <br />
       <div className="addCarButtonHolder">
-        <button>Add</button>
+        <button onClick={addCarHandler}>Add</button>
       </div>
     </fieldset>
   );

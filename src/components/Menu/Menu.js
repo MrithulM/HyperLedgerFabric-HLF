@@ -4,7 +4,7 @@ import DisplayCarInfo from "../DisplayCarInfo/DisplayCarInfo";
 import "./Menu.css";
 import AddCar from "../AddCar/AddCar";
 
-export default function Menu() {
+export default function Menu(props) {
   const [searchCar, setSearchCar] = useState(false);
   const [searchAll, setSearchAll] = useState(false);
   const [carInfo, setCarInfo] = useState({});
@@ -60,7 +60,7 @@ export default function Menu() {
 
   return (
     <div className="menu-container">
-      <AddCar />
+      {props.addScreenActive ? <AddCar /> : <></>}
       <div className="input-container">
         <input
           type="text"
