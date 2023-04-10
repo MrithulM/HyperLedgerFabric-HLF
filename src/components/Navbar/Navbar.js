@@ -1,11 +1,12 @@
-import React from 'react'
-import "./Navbar.css"
+import React from "react";
+import "./Navbar.css";
 export default function Navbar() {
   return (
     <nav>
-        <div className="navbar">
-            <h2 className='title'>Hyperledger Fabric</h2>
-        </div>
+      <div className="navbar">
+        <h2 className="title">Hyperledger Fabric</h2>
+        <button>Add a Car</button>
+      </div>
     </nav>
-  )
+  );
 }

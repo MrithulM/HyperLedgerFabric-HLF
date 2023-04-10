@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import DisplayCarInfo from "../DisplayCarInfo/DisplayCarInfo";
 import "./Menu.css";
+import AddCar from "../AddCar/AddCar";
 
 export default function Menu() {
   const [searchCar, setSearchCar] = useState(false);
@@ -25,6 +26,7 @@ export default function Menu() {
         `http://4.246.223.78:8080/api/query/${carId.toUpperCase()}`
       );
       setCarInfo((carInfo) => JSON.parse(obj.data.response));
+      setCarId("");
     } catch (err) {
       console.log(err);
     }
@@ -40,17 +42,35 @@ export default function Menu() {
       console.log(err);
     }
   };
+  const changeOwnerHandler = async () => {
+    const newOwner = prompt("Enter new owner name:");
+    try {
+      await axios.put(
+        `http://4.246.223.78:8080/api/changeowner/${carId.toUpperCase()}`,
+        {
+          owner: newOwner,
+        }
+      );
+      alert("owner updated");
+      setCarId("");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className="menu-container">
+      <AddCar />
       <div className="input-container">
         <input
           type="text"
+          value={carId}
           placeholder="Enter car ID"
           onChange={carIdInputHandler}
         />
         <button onClick={searchCarHandler}>Search By ID</button>
         <button onClick={searchCars}>Search all</button>
+        <button onClick={changeOwnerHandler}>Change Owner</button>
       </div>
       <div></div>
       <DisplayCarInfo
