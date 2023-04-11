@@ -138,6 +138,24 @@
   ![Screenshot (6)](https://user-images.githubusercontent.com/129254225/229087745-f7f21bb7-c1ca-4782-8592-0784154c5739.png)
   
   
+  ## Working in MS Azure
+  
+   >
+   >**_Constraints ⚠️_**
+   ><h4> Challenges faced in windows</h4>
+   >
+   > * WSL couldn't reach the internet due to the firewall rules. Hence couldn't:
+   >   * Update it's package files
+   >   * Curl the setup files
+   >   * Couldn't install the nodejs package
+   > * Docker creates a seperate IP address in desktop. Hence, couldn't be identified as localhost 
+   > * The server, network, and chaincode files are present in the WSL linux machine and editing and working with them will be hard without SSH.
+   
+   ### Using MS Azure VM's and configuring the network firewall rules
+   
+  
+  
+  
   
   
   
