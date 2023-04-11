@@ -49,10 +49,13 @@
    >   * Search for "Windows Features" in the start menu.
    >   * Select "Turn Windows Features on or off" and turn it on.
    >   * Reboot the system.
-   
+   <div id="install">
+     
    ## Setting up the test network
-   
+     
+   </div>
    <h3> 1) Install the fabric samples, docker images and binaries </h3>
+  
    
    * Prepare a working directory - for example, **```$HOME/src/scripts```** directory to download the scripts and open the directory.
    > ```console
@@ -152,8 +155,12 @@
    > * The server, network, and chaincode files are present in the WSL linux machine and editing and working with them will be hard without SSH.
    
    ### Using MS Azure VM's and configuring the network firewall rules
-   
   
+   * Spinning up two VM's - A Ubuntu VM to hold the chaincode and fabric network related files (Click <a href="#install">here</a> to view the installation steps) and a Windows VM to work with writing the WebApp frontend scripts.
+  * Configure the port rules under the **`networking`** tab and open ports **` 3000 `** (for react) and port **` 8080 `** for the server
+   
+  ![Screenshot (18)](https://user-images.githubusercontent.com/129254225/231133347-866d6314-7e9d-47c8-b8b5-dd8833ad450c.png)
+
   
   
   
