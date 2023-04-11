@@ -158,7 +158,9 @@
   
    * Spinning up two VM's - A Ubuntu VM to hold the chaincode and fabric network related files (Click <a href="#install">here</a> to view the installation steps) and a Windows VM to work with writing the WebApp frontend scripts.
   * Configure the port rules under the **`networking`** tab and open ports **` 3000 `** (for react) and port **` 8080 `** for the server
-   
+  
+  ![Screenshot (17)(1)](https://user-images.githubusercontent.com/129254225/231134548-7272a368-b77f-4ca5-8882-aaf3fdfba24c.png)
+
   ![Screenshot (18)](https://user-images.githubusercontent.com/129254225/231133347-866d6314-7e9d-47c8-b8b5-dd8833ad450c.png)
 
   
