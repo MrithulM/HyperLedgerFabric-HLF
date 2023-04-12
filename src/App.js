@@ -6,11 +6,13 @@ function App() {
   const addScreenHandler = () => {
     setAddScreenActive(true);
   };
-  console.log(addScreenActive);
   return (
     <>
       <Navbar addScreenHandler={addScreenHandler} />
-      <Menu addScreenActive={addScreenActive} />
+      <Menu
+        addScreenActive={addScreenActive}
+        setAddScreenActive={setAddScreenActive}
+      />
     </>
   );
 }

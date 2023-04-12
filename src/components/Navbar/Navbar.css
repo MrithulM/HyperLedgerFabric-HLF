@@ -11,6 +11,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+  font-weight: 100;
 }
 .title {
   padding: 0px 0 0 10px;

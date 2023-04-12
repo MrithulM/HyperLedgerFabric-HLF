@@ -1,5 +1,29 @@
+.model-holder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(119, 119, 119, 0.671);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .field {
-  padding: 10px 15px;
+  width: 400px;
+  height: 400px;
+  background-color: whitesmoke;
+}
+.field p {
+  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Sacramento", cursive;
+  font-size: 2rem;
+  height: 10%;
+  width: 100%;
+  color: white;
+  padding: 5px 15px;
+  background-color: rgb(59, 91, 196);
 }
 .field input {
   padding: 5px 10px;
@@ -15,4 +39,7 @@
   padding: 5px 10px;
   margin: 10px;
   cursor: pointer;
+}
+.input-properties {
+  padding: 30px 30px;
 }

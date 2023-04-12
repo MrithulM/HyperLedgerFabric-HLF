@@ -60,7 +60,11 @@ export default function Menu(props) {
 
   return (
     <div className="menu-container">
-      {props.addScreenActive ? <AddCar /> : <></>}
+      {props.addScreenActive ? (
+        <AddCar closemodal={props.setAddScreenActive} />
+      ) : (
+        <></>
+      )}
       <div className="input-container">
         <input
           type="text"
