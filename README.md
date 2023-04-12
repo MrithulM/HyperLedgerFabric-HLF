@@ -164,12 +164,21 @@
   ![Screenshot (18)](https://user-images.githubusercontent.com/129254225/231133347-866d6314-7e9d-47c8-b8b5-dd8833ad450c.png)
 
   ![Screenshot (19)](https://user-images.githubusercontent.com/129254225/231136215-cd29edc4-162e-462b-804b-c6c1b92bf55e.png)
+  <br/>
+  * Initiate a remote desktop connection to the windows VM using the `Remote Desktop Connection` app in the local PC.
+    * Enter the username, IP address and mention the port **`3389`**.
+    * A RDP connection is usually established through the **`3389`** port, thereby check if 3389 inboud rule is already present in the VM under the `networking` tab.
+    * Click the "Connect" button to initiate the connection.
+    * You may see a security warning about the remote computer's identity. Click "Yes" to proceed.
+    * Enter your credentials for the Azure VM, which should be the same as the credentials you used when setting up the VM.
+    * Click "OK" to connect to the Azure VM.
+   
+  ![Screenshot (20)](https://user-images.githubusercontent.com/129254225/231447306-e81cb352-c8e4-488d-b99e-5e75ea38d520.png)
 
-  
-  
-  
-  
-  
+  ![Screenshot (21)](https://user-images.githubusercontent.com/129254225/231447335-31232ce8-860f-4177-8dbc-c359a9457220.png)
+
+  ![Screenshot (22)](https://user-images.githubusercontent.com/129254225/231447350-d20ece51-80e8-4083-8b58-b5f54be8d0db.png)
+
 
   
   
