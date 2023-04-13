@@ -19,7 +19,6 @@ export default function AddCar(props) {
     setModalCloseStatus(true);
     setTimeout(() => {
       props.closemodal(false);
-      setModalCloseStatus(false);
     }, 500);
   };
 
@@ -40,8 +39,8 @@ export default function AddCar(props) {
       colorRef.current.value = "";
       ownerRef.current.value = "";
       closeModalHandler();
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      alert(error.response.data);
     }
   };
   return (
