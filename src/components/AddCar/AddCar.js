@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./AddCar.css";
 import axios from "axios";
 
@@ -8,6 +8,20 @@ export default function AddCar(props) {
   const nameRef = useRef(null);
   const colorRef = useRef(null);
   const ownerRef = useRef(null);
+  const [modalCloseStatus, setModalCloseStatus] = useState(false);
+
+  useEffect(() => {
+    setModalCloseStatus(false);
+    console.log("useeffect running!");
+  }, []);
+
+  const closeModalHandler = () => {
+    setModalCloseStatus(true);
+    setTimeout(() => {
+      props.closemodal(false);
+      setModalCloseStatus(false);
+    }, 500);
+  };
 
   const addCarHandler = async () => {
     const carid = "CAR" + idRef.current.value;
@@ -15,7 +29,6 @@ export default function AddCar(props) {
     const name = nameRef.current.value;
     const colour = colorRef.current.value;
     const owner = ownerRef.current.value;
-
     const details = { carid, make: model, model: name, colour, owner };
     try {
       await axios.post("http://4.246.223.78:8080/api/addcar", details);
@@ -26,13 +39,18 @@ export default function AddCar(props) {
       nameRef.current.value = "";
       colorRef.current.value = "";
       ownerRef.current.value = "";
+      closeModalHandler();
     } catch (err) {
       console.log(err);
     }
   };
   return (
     <div className="model-holder">
-      <div className="field">
+      <div
+        className={`field ${
+          modalCloseStatus === true ? "closeActive" : "openActive"
+        }`}
+      >
         <p>Add a Car</p>
         <div className="input-properties">
           <label for="carid">Car ID:</label>
@@ -52,12 +70,7 @@ export default function AddCar(props) {
           <br />
           <div className="addCarButtonHolder">
             <button onClick={addCarHandler}>Add</button>
-            <button
-              className="close-button"
-              onClick={() => {
-                props.closemodal(false);
-              }}
-            >
+            <button className="close-button" onClick={closeModalHandler}>
               Close
             </button>
           </div>
