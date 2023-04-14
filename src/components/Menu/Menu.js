@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayCarInfo from "../DisplayCarInfo/DisplayCarInfo";
 import "./Menu.css";
@@ -10,23 +10,29 @@ export default function Menu(props) {
   const [carInfo, setCarInfo] = useState({});
   const [carId, setCarId] = useState(null);
   const [carKey, setCarKey] = useState(null);
-
+  const [loadingActive, setLoadingActive] = useState(false);
   const carIdInputHandler = (e) => {
     setCarId((carId) => e.target.value);
 
     console.log(carId);
   };
+  useEffect(() => {
+    searchCars();
+    console.log("searching cars!");
+  }, []);
 
   const searchCarHandler = async () => {
     setCarKey(carId);
     setSearchCar(true);
     setSearchAll(false);
     try {
+      setLoadingActive(true);
       const obj = await axios.get(
         `http://4.246.223.78:8080/api/query/${carId.toUpperCase()}`
       );
       setCarInfo((carInfo) => JSON.parse(obj.data.response));
       setCarId("");
+      setLoadingActive(false);
     } catch (err) {
       console.log(err);
     }
@@ -35,9 +41,11 @@ export default function Menu(props) {
     setSearchAll(true);
     setSearchCar(false);
     try {
+      setLoadingActive(true);
       const obj = await axios.get("http://4.246.223.78:8080/api/queryAllCars");
       setCarInfo((carInfo) => JSON.parse(obj.data.response));
       console.log(carInfo);
+      setLoadingActive(false);
     } catch (err) {
       console.log(err);
     }
@@ -53,6 +61,7 @@ export default function Menu(props) {
       );
       alert("owner updated");
       setCarId("");
+      searchCars();
     } catch (err) {
       console.log(err);
     }
@@ -77,12 +86,16 @@ export default function Menu(props) {
         <button onClick={changeOwnerHandler}>Change Owner</button>
       </div>
       <div></div>
-      <DisplayCarInfo
-        carId={carKey}
-        carInfo={carInfo}
-        searchAll={searchAll}
-        searchCar={searchCar}
-      />
+      {!loadingActive ? (
+        <DisplayCarInfo
+          carId={carKey}
+          carInfo={carInfo}
+          searchAll={searchAll}
+          searchCar={searchCar}
+        />
+      ) : (
+        <p style={{ marginTop: "20px" }}>Loading...</p>
+      )}
     </div>
   );
 }

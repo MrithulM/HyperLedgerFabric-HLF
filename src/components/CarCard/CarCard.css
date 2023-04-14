@@ -12,3 +12,8 @@
 .details-container {
   padding: 10px 15px;
 }
+.carImage {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+}

@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AddCar.css";
 import axios from "axios";
-
+import FileBase64 from "react-file-base64";
 export default function AddCar(props) {
+  const [imgB64, setImgB64] = useState(null);
   const idRef = useRef(null);
   const modelRef = useRef(null);
   const nameRef = useRef(null);
@@ -28,11 +29,19 @@ export default function AddCar(props) {
     const name = nameRef.current.value;
     const colour = colorRef.current.value;
     const owner = ownerRef.current.value;
-    const details = { carid, make: model, model: name, colour, owner };
+    const details = {
+      img: imgB64,
+      carid,
+      make: model,
+      model: name,
+      colour,
+      owner,
+    };
     try {
       await axios.post("http://4.246.223.78:8080/api/addcar", details);
       console.log("Added car!");
       alert("Added car!");
+      setImgB64("");
       idRef.current.value = "";
       modelRef.current.value = "";
       nameRef.current.value = "";
@@ -52,6 +61,13 @@ export default function AddCar(props) {
       >
         <p>Add a Car</p>
         <div className="input-properties">
+          <label for="carimg">Poster:</label>
+          <FileBase64
+            type="file"
+            multiple={false}
+            max-size="1500"
+            onDone={({ base64 }) => setImgB64(base64)}
+          />
           <label for="carid">Car ID:</label>
           <input type="number" id="carid" name="carid" ref={idRef} />
           <br />

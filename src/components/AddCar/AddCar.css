@@ -52,7 +52,7 @@
   cursor: pointer;
 }
 .input-properties {
-  padding: 30px 30px;
+  padding: 30px 25px;
 }
 
 @keyframes openModal {

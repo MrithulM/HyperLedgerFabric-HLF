@@ -2,7 +2,7 @@ import React from "react";
 import "./CarCard.css";
 
 export default function CarCard(props) {
-  const { color, docType, make, model, owner } = props.record;
+  const { img, color, docType, make, model, owner } = props.record;
   const id = props.id.toUpperCase();
   return (
     <>
@@ -10,6 +10,7 @@ export default function CarCard(props) {
         <div className="card">
           <h4>{id}</h4>
           <div className="details-container">
+            <img src={img} alt="" className="carImage" />
             <div>
               <p>Color: {color}</p>
               <p>Type: {docType}</p>
