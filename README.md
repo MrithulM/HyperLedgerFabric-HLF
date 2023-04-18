@@ -84,6 +84,10 @@
     
   </div>
   <br/>
+  
+  >**Tip**:
+  > If docker throws an error saying "Image not found", Try updating the docker desktop to latest version.<br/>
+  
   The above command initializes the fabric setup with all the necessary base that are required to work with. Start the test network to confirm whether the setup is properly installed.<br/><br/>
   
   The most important files that are required to run the peer and orderer nodes are '**bin**' and '**config**'. <br/><br/>
