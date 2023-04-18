@@ -8,7 +8,7 @@ export default function Menu(props) {
   const [searchCar, setSearchCar] = useState(false);
   const [searchAll, setSearchAll] = useState(false);
   const [carInfo, setCarInfo] = useState({});
-  const [carId, setCarId] = useState(null);
+  const [carId, setCarId] = useState("");
   const [carKey, setCarKey] = useState(null);
   const [loadingActive, setLoadingActive] = useState(false);
   const carIdInputHandler = (e) => {
@@ -22,6 +22,10 @@ export default function Menu(props) {
   }, []);
 
   const searchCarHandler = async () => {
+    if (carId.trim() === "") {
+      alert("Enter an ID value!");
+      return;
+    }
     setCarKey(carId);
     setSearchCar(true);
     setSearchAll(false);
@@ -51,6 +55,10 @@ export default function Menu(props) {
     }
   };
   const changeOwnerHandler = async () => {
+    if (carId.trim() === "") {
+      alert("Enter an ID value!");
+      return;
+    }
     const newOwner = prompt("Enter new owner name:");
     try {
       await axios.put(
