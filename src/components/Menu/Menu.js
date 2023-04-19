@@ -96,10 +96,13 @@ export default function Menu(props) {
       <div></div>
       {!loadingActive ? (
         <DisplayCarInfo
+          setClickedCar={props.setClickedCar}
           carId={carKey}
           carInfo={carInfo}
           searchAll={searchAll}
           searchCar={searchCar}
+          carModalOpen={props.carModalOpen}
+          carModalHandler={props.carModalHandler}
         />
       ) : (
         <p style={{ marginTop: "20px" }}>Loading...</p>

@@ -13,17 +13,26 @@ export default function DisplayCarInfo(props) {
         flexDirection: "column",
       }}
     >
-      {console.log(props.carInfo)}
       <h2 style={{ margin: "10px" }}>Car data</h2>
       <div className="card-holder">
-        {props.carInfo.Record}
         {Object.keys(props.carInfo).length !== 0 ? (
           props.searchAll && Array.isArray(props.carInfo) ? (
             props.carInfo.map((car) => (
-              <CarCard key={car.Key} id={car.Key} record={car.Record} />
+              <CarCard
+                key={car.Key}
+                id={car.Key}
+                record={car.Record}
+                setClickedCar={props.setClickedCar}
+                carModalOpen={props.carModalOpen}
+              />
             ))
           ) : (
-            <CarCard id={props.carId} record={props.carInfo} />
+            <CarCard
+              id={props.carId}
+              record={props.carInfo}
+              setClickedCar={props.setClickedCar}
+              carModalOpen={props.carModalOpen}
+            />
           )
         ) : (
           <p style={{ marginLeft: "520px" }}>none</p>
