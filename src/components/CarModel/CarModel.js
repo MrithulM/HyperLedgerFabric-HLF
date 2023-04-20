@@ -4,28 +4,35 @@ export default function CarModel(props) {
   const closeCarModel = () => {
     props.carModalClose();
   };
-  const { img, docType, color, make, model, owner } = props.clickedCar;
+  const { id, img, docType, color, make, model, owner } = props.clickedCar;
   return (
     <div className="car-model-bd">
       <div className="car-model-holder">
-        <div>
+        <div className="car-data-container">
           <div className="modal-img-holder">
-            <img
-              src={img}
-              alt="car"
-              style={{ height: "200px", width: "300px" }}
-            />
+            <img className={`${id}-modal-img`} src={img} alt="car" />
           </div>
-          <div>
+          <div className="car-model-details-container">
             <div>
-              <div className="color-bar"></div>
+              <div
+                // className="color-bar"
+                style={{
+                  background:
+                    color.toLowerCase() !== "white" ? `${color}` : "#D4D4D4",
+                  filter: "saturate(0.7)",
+                  width: "100%",
+                  height: "20px",
+                  transform: "translateX(-500px)",
+                  WebkitAnimation: "color-bar-slide 500ms 100ms forwards",
+                  zIndex: "2",
+                }}
+              ></div>
               <div>
-                <p>{props.carID}</p>
-                {/* <p>Color: {color}</p>
+                <p>Color: {color}</p>
                 <p>Type: {docType}</p>
                 <p>Make: {make}</p>
                 <p>Model: {model}</p>
-                <p>Owner: {owner}</p> */}
+                <p>Owner: {owner}</p>
               </div>
             </div>
             <div className="button-holder">
