@@ -17,7 +17,7 @@ nav {
 .title {
   padding: 0px 0 0 10px;
 }
-.navbar button {
+.admin-functions button {
   margin: 0px 10px 0px 0px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -26,10 +26,10 @@ nav {
   color: white;
   cursor: pointer;
 }
-.navbar button:hover {
+.admin-functions button:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(59, 91, 196);
 }
-.navbar button:active {
+.admin-functions button:active {
   transform: scale(102%);
 }

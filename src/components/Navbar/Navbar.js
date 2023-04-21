@@ -5,7 +5,10 @@ export default function Navbar(props) {
     <nav>
       <div className="navbar">
         <h2 className="title">Hyperledger Fabric</h2>
-        <button onClick={props.addScreenHandler}>Add a Car</button>
+        <div className="admin-functions">
+          <button onClick={props.addScreenHandler}>Add a Car</button>
+          <button onClick={props.deleteCarHandler}>Delete Car</button>
+        </div>
       </div>
     </nav>
   );

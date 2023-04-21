@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Menu from "./components/Menu/Menu";
 import { useState } from "react";
 import CarModel from "./components/CarModel/CarModel";
+import axios from "axios";
 function App() {
   const [addScreenActive, setAddScreenActive] = useState(false);
   const [carModalActive, setcarModelActive] = useState(false);
@@ -16,6 +17,22 @@ function App() {
   const carModalClose = () => {
     setcarModelActive(false);
   };
+  const deleteCarHandler = async () => {
+    const carID = prompt("Enter the carID to delete:");
+    if (carID.trim() === "") {
+      alert("ID not valid!");
+      return;
+    }
+    try {
+      await axios.delete(
+        `http://4.246.223.78:8080/api/deletecar/${carID.toUpperCase()}`
+      );
+      alert("Car deleted!");
+      window.refresh();
+    } catch (err) {
+      alert(err.response.data);
+    }
+  };
 
   return (
     <>
@@ -24,7 +41,10 @@ function App() {
       ) : (
         ""
       )}
-      <Navbar addScreenHandler={addScreenHandler} />
+      <Navbar
+        addScreenHandler={addScreenHandler}
+        deleteCarHandler={deleteCarHandler}
+      />
       <Menu
         addScreenActive={addScreenActive}
         setAddScreenActive={setAddScreenActive}
