@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&family=Roboto:ital,wght@0,400;1,300&family=Sacramento&display=swap");
 .car-model-bd {
   position: fixed;
   top: 0;
@@ -78,6 +79,22 @@
   border-right: 40px solid whitesmoke;
   border-bottom: 30px solid transparent;
   animation: color-bar-slide 295ms forwards;
+}
+.modal-content {
+  margin-top: 5px;
+}
+.modal-button-holder {
+  text-align: center;
+}
+.modal-button-holder button {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+.modal-content .modal-props {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 20px 30px;
 }
 
 @keyframes color-bar-slide {
