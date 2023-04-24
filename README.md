@@ -40,6 +40,7 @@
    >
    > * **WSL has to be of version 2 instead of version 1** to support Docker desktop integration. Hence, if the system has WSL1 installed it has to be upgraded to WSL2. To upgrade, the upgrade the user needs to download the latest WSL 2 kernel update package and enable it through PowerShell or CMD.
    > ```$ wsl --set-version <distro-name> 2``` replacing <distro name> with the name of the Linux distribution that you want to update. For example, wsl --set-version Ubuntu-20.04 2 will set your Ubuntu 20.04 distribution to use WSL 2.
+   > * ** The LAN Network or the Wifi network that has security rules enabled wouldn't support the installation, as it blocks the links that are necessary to install the required packages (Eg: NodeJS)
    > * **Virtualization has to be enabled** in the BIOS to make WSL 2 work: WSL 2 requires hardware virtualization to work correctly. If the system has hardware virtualization disabled in the BIOS, WSL2 will not function correctly and **Docker Desktop will not run. The user must: 
    >   * Reboot the computer.
    >   * Tap F10 or Esc during Loadup to enter BIOS.
