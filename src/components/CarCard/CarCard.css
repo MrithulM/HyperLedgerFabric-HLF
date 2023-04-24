@@ -40,6 +40,23 @@
   transition: all 0.5s ease-in-out;
   transform: translateY(100px);
 }
+.info-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
+}
+.info-icon i {
+  top: 5px;
+  right: 5px;
+  opacity: 0;
+  transform: scale(0%);
+  animation: icon-pop-in 500ms forwards;
+  color: #777;
+  cursor: pointer;
+}
 .touchActive {
   transform: translate(0);
 }
@@ -59,17 +76,44 @@
 .CAR0.carImage {
   object-position: 25% 65%;
 }
-.carImage:hover {
+.car-hover-active {
   transform: scale(115%);
   filter: grayscale(0.5);
 }
 .bubble {
-  height: 15px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: black;
+  height: 16px;
+  width: 0%;
+  padding: 1px 0px;
+  font-size: 0.8rem;
+  font-weight: 600;
   position: absolute;
+  top: 6px;
+  right: 15px;
+  background-color: rgba(255, 255, 255, 0.438);
+  z-index: 1;
+  border-radius: 10px 2px 2px 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+  animation: bubble-pop-in 500ms forwards;
 }
-.bubble-active {
-  transform: scale(500%);
+@keyframes bubble-pop-in {
+  100% {
+    width: 20%;
+    opacity: 1;
+  }
+}
+@keyframes icon-pop-in {
+  50% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(125%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
 }

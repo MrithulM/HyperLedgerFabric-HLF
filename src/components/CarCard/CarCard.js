@@ -13,7 +13,9 @@ export default function CarCard(props) {
             <img
               src={img}
               alt="car"
-              className={`${props.id} carImage`}
+              className={`${props.id} carImage ${
+                touchActive ? "car-hover-active" : ""
+              }`}
               onClick={(e) => {
                 props.setClickedCar({ id: props.id, ...props.record });
                 props.carModalOpen();
@@ -25,6 +27,16 @@ export default function CarCard(props) {
                 setTouchActive(false);
               }}
             />
+            {touchActive ? (
+              <>
+                <div className="info-icon">
+                  <i class="fa-solid fa-circle-info"></i>
+                </div>
+                <div className="bubble">{props.id}</div>
+              </>
+            ) : (
+              ""
+            )}
             <div
               style={{ pointerEvents: "none" }}
               className={`model-backdrop ${touchActive ? "touchActive" : ""}`}
