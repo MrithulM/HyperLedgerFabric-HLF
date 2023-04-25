@@ -32,7 +32,7 @@ export default function CarCard(props) {
                 <div className="info-icon">
                   <i class="fa-solid fa-circle-info"></i>
                 </div>
-                <div className="bubble">{props.id}</div>
+                <div className="bubble">{props.id.toUpperCase()}</div>
               </>
             ) : (
               ""
