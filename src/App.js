@@ -28,12 +28,31 @@ function App() {
         `http://4.246.223.78:8080/api/deletecar/${carID.toUpperCase()}`
       );
       alert("Car deleted!");
-      window.refresh();
+      window.location.reload();
     } catch (err) {
       alert(err.response.data);
     }
   };
-
+  const changeOwnerHandler = async () => {
+    const carId = prompt("Specify the CARID to delete");
+    if (carId.trim() === "") {
+      alert("Enter an ID value!");
+      return;
+    }
+    const newOwner = prompt("Enter new owner name:");
+    try {
+      await axios.put(
+        `http://4.246.223.78:8080/api/changeowner/${carId.toUpperCase()}`,
+        {
+          owner: newOwner,
+        }
+      );
+      alert("owner updated");
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       {carModalActive ? (
@@ -44,6 +63,7 @@ function App() {
       <Navbar
         addScreenHandler={addScreenHandler}
         deleteCarHandler={deleteCarHandler}
+        changeOwnerHandler={changeOwnerHandler}
       />
       <Menu
         addScreenActive={addScreenActive}

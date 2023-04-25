@@ -54,26 +54,6 @@ export default function Menu(props) {
       console.log(err);
     }
   };
-  const changeOwnerHandler = async () => {
-    if (carId.trim() === "") {
-      alert("Enter an ID value!");
-      return;
-    }
-    const newOwner = prompt("Enter new owner name:");
-    try {
-      await axios.put(
-        `http://4.246.223.78:8080/api/changeowner/${carId.toUpperCase()}`,
-        {
-          owner: newOwner,
-        }
-      );
-      alert("owner updated");
-      setCarId("");
-      searchCars();
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   return (
     <div className="menu-container">
@@ -91,7 +71,6 @@ export default function Menu(props) {
         />
         <button onClick={searchCarHandler}>Search By ID</button>
         <button onClick={searchCars}>Search all</button>
-        <button onClick={changeOwnerHandler}>Change Owner</button>
       </div>
       <div></div>
       {!loadingActive ? (

@@ -37,8 +37,22 @@ export default function Navbar(props) {
             <i class={`fa-solid fa-user-lock`}></i>
           </div>
         )}
-        {/* <button onClick={props.addScreenHandler}>Add a Car</button>
-          <button onClick={props.deleteCarHandler}>Delete Car</button> */}
+      </div>
+      <div className="choices">
+        <div className="util-title">
+          <h4>Admin Utils</h4>
+        </div>
+        <button className="nav-choice" onClick={props.addScreenHandler}>
+          Add a Car
+        </button>
+        <div className="border-line"></div>
+        <button className="nav-choice" onClick={props.deleteCarHandler}>
+          Delete a Car
+        </button>
+        <div className="border-line"></div>
+        <button className="nav-choice" onClick={props.changeOwnerHandler}>
+          Change Owner
+        </button>
       </div>
     </nav>
   );

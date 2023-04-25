@@ -56,6 +56,52 @@ nav {
 .close-container i {
   pointer-events: none;
 }
+/* .choice-holder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+} */
+.choices {
+  position: absolute;
+  width: 15%;
+  height: 45%;
+  top: 66px;
+  right: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-left: 1px solid rgb(59, 91, 196);
+  border-bottom: 1px solid rgb(59, 91, 196);
+  border-radius: 3px;
+  z-index: 50;
+  background: whitesmoke;
+}
+.util-title {
+  font-family: "Sacramento", sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 8px 0px;
+  color: rgb(59, 91, 196);
+}
+.choices button {
+  padding: 10px 15px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  color: rgb(31, 61, 161);
+  border: none;
+  background-color: transparent;
+}
+.border-line {
+  width: 80%;
+  height: 1px;
+  background-color: rgba(139, 152, 196, 0.37);
+}
+.choices button:hover {
+  color: whitesmoke;
+  background-color: rgba(59, 91, 196, 0.596);
+}
 
 /* .admin-functions button {
   border-radius: 5px;
