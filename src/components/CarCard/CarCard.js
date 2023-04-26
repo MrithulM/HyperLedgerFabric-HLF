@@ -9,6 +9,10 @@ export default function CarCard(props) {
     <>
       <div className={`card`}>
         <div className="details-container">
+          <div class="ribbon ribbon-top-left">
+            <span>NEW!</span>
+          </div>
+
           <div className="poster-container">
             <img
               src={img}

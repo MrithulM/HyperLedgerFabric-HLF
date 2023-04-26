@@ -53,20 +53,34 @@ export default function Navbar(props) {
           <button
             className="nav-choice c1"
             onMouseEnter={(e) => {
-              console.log(e);
+              setCurrentHover(e.target.className.split(" ")[1]);
+            }}
+            onMouseLeave={() => {
+              setCurrentHover("");
             }}
             onClick={() => {
               props.addScreenHandler();
+              setCurrentHover("");
               setPopupActive((popupActive) => !popupActive);
               setAdminUtilsActive((adminUtilsActive) => !adminUtilsActive);
             }}
           >
             Add a Car
-            <img src={AddCarImg} alt="add-car"></img>
+            {currentHover !== "c1" ? (
+              <img src={AddCarImg} alt="add-car"></img>
+            ) : (
+              <img src={AddCarWhite} alt="add-car"></img>
+            )}
           </button>
           <div className="border-line"></div>
           <button
-            className="nav-choice"
+            className="nav-choice c2"
+            onMouseEnter={(e) => {
+              setCurrentHover(e.target.className.split(" ")[1]);
+            }}
+            onMouseLeave={() => {
+              setCurrentHover("");
+            }}
             onClick={() => {
               props.deleteCarHandler();
               setPopupActive((popupActive) => !popupActive);
@@ -74,11 +88,21 @@ export default function Navbar(props) {
             }}
           >
             Delete a Car
-            <img src={DeleteCarImg} alt="delete-car"></img>
+            {currentHover !== "c2" ? (
+              <img src={DeleteCarImg} alt="delete-car"></img>
+            ) : (
+              <img src={DeleteCarWhite} alt="delete-car"></img>
+            )}
           </button>
           <div className="border-line"></div>
           <button
-            className="nav-choice"
+            className="nav-choice c3"
+            onMouseEnter={(e) => {
+              setCurrentHover(e.target.className.split(" ")[1]);
+            }}
+            onMouseLeave={() => {
+              setCurrentHover("");
+            }}
             onClick={() => {
               props.changeOwnerHandler();
               setPopupActive((popupActive) => !popupActive);
@@ -86,7 +110,11 @@ export default function Navbar(props) {
             }}
           >
             Change Owner
-            <img src={ChangeOwnerImg} alt="add-car"></img>
+            {currentHover !== "c3" ? (
+              <img src={ChangeOwnerImg} alt="change-owner"></img>
+            ) : (
+              <img src={ChangeOwnerWhite} alt="change-owner"></img>
+            )}
           </button>
         </div>
       ) : (
