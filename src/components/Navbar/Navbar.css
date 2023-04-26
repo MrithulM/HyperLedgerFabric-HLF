@@ -53,6 +53,16 @@ nav {
   cursor: pointer;
   animation: close-container-pop 500ms forwards;
 }
+.nav-choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-choice img {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
 .close-container i {
   pointer-events: none;
 }
@@ -64,9 +74,9 @@ nav {
 .choices {
   position: absolute;
   width: 15%;
-  height: 45%;
+  height: 42%;
+  right: -50%;
   top: 66px;
-  right: -2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,6 +85,8 @@ nav {
   border-bottom: 1px solid rgb(59, 91, 196);
   border-radius: 3px;
   z-index: 50;
+  transition: all 200ms ease;
+  animation: choices-popin 300ms forwards;
   background: whitesmoke;
 }
 .util-title {
@@ -146,5 +158,11 @@ nav {
   }
   100% {
     transform: scale(100%);
+  }
+}
+
+@keyframes choices-popin {
+  100% {
+    right: -2px;
   }
 }

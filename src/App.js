@@ -34,7 +34,7 @@ function App() {
     }
   };
   const changeOwnerHandler = async () => {
-    const carId = prompt("Specify the CARID to delete");
+    const carId = prompt("Specify the CARID:");
     if (carId.trim() === "") {
       alert("Enter an ID value!");
       return;

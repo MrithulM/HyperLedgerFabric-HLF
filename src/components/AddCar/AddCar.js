@@ -51,6 +51,7 @@ export default function AddCar(props) {
       colorRef.current.value = "";
       ownerRef.current.value = "";
       closeModalHandler();
+      window.location.reload();
     } catch (error) {
       alert(error.response.data);
     }
@@ -69,7 +70,20 @@ export default function AddCar(props) {
             type="file"
             multiple={false}
             max-size="1500"
-            onDone={({ base64 }) => {
+            onDone={({ base64, type }) => {
+              console.log(type);
+              if (
+                type !== "image/jpg" &&
+                type !== "image/jpeg" &&
+                type !== "image/png" &&
+                type !== "image/svg"
+              ) {
+                alert(
+                  "File format not supported\nSupported formats: .jpg, .jpeg, .png, .svg"
+                );
+                closeModalHandler();
+                return;
+              }
               let padding;
               let inBytes;
               let base64Length;
@@ -99,7 +113,14 @@ export default function AddCar(props) {
             type="file"
             multiple={false}
             max-size="1500"
-            onDone={({ base64 }) => {
+            onDone={({ base64, type }) => {
+              if (type !== "image/jpg" && type !== "image/jpeg") {
+                alert(
+                  "File format not supported\nSupported formats: .jpg, .jpeg"
+                );
+                closeModalHandler();
+                return;
+              }
               let padding;
               let inBytes;
               let base64Length;
