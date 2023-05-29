@@ -190,7 +190,54 @@
   * To access this chaincode - ssh to the server system and move in to the directory named */fabric-samples/chaincode/fabcar/javascript*
   * Deploy the chaincode to the network using the command ```startFabric.sh javascript``` which is present inside the directory named */fabric-samples/fabcar/
   * On successful execution, the chaincode will be deployed all the peer nodes and 2 organizations namely org1 and org2 along with a channel will be created.
-
+  
+  <h3> 4) Writing server side code (NodeJS) </h4>
+  
+  * Writing api routes to get, post, delete, and put.
+  * Fetch the wallet and check for created identities
+  
+    * <h4> Enrolling Users/ Creating Identities </h4>
+    * To create admin and regular user, we use identities provided by the fabric and stored in the folder known as wallets.
+    * Here when we run the startFabric.sh script wallets are created correspondingly in the same directory where the script is run inside the javascript folder.
+    * To create admin and appuser identities we can run the files present in <b><i>~/fabric-samples/fabcar/javascript</i></b>
+    * Run the file enrollAdmin.js using the command ```node enrollAdmin.js``` to register admin user and the command ```node registerUser.js``` to create basic user.
+  
+  ![Screenshot (23)](https://github.com/MrithulM/HyperLedgerFabric-HLF/assets/129254225/d4df1053-7b02-46b7-96a4-6de2f4f438f0)
+  
+  * Use this api route to hit the chaincode function through the server.
+  
+  <h3> 5) Writing client side code (ReactJS) </h4>
+  
+  * Taking remote desktop connection to the windows server.
+  * To create basic boilerplate for a react app use ```npx create-react-app {app-name}```
+  * Once created, use ```npm start``` command to start a local client server which can be (usually) accessed in the 3000 port.
+  
+  
+  ## Voice Assistant
+  
+  Creating a voice assistant executable package that is able to comprehend voice over and text based input commands
+  
+  ### Installation
+  
+  * <b> Major dependencies </b>
+    * Anaconda 
+    * Python 3.7 and above
+    * Rasa framework
+  * <b> Package dependencies </b>
+    * requests
+    * SpeechRecognition
+    * pyaudio
+    * pybase64
+  
+  <div></div>
+  <h3> Training rasa </h3>
+  
+  * Open anaconda prompt and create an enviroment to install the packages
+  * To the create the environment use the command ```conda create --name {env_name}``` 
+  * Activate the created environment using ```activate {env_name}```
+  * Once activated install rasa using ```pip3 install rasa```
+  * To create a fresh boilerplate project use ```rasa init``` command
+  
   
   
 
