@@ -237,19 +237,38 @@
   * Activate the created environment using ```activate {env_name}```
   * Once activated install rasa using ```pip3 install rasa```
   * To create a fresh boilerplate project use ```rasa init``` command
+  * Train the boilerplate model using ```rasa train``` command
   * To run local rasa server use ```rasa run``` command
   * Incase of <a href="https://rasa.com/docs/rasa/custom-actions/">custom actions</a> being used
      * Open another anaconda prompt
      * Run ```rasa run actions``` command
-  * The server is running and the endpoint - http://localhost:5005/webhooks/rest/webhook will be available to post data in the form of JSON with the template:
+  * The server is running and the endpoint - http://localhost:5005/webhooks/rest/webhook will be available get response by posting data in the form of JSON with the template:
   > {
   >    "message": user,
   >    "sender": "user123"
   > }
   
+  <h4> Client side  </h4>
   
+  * Install the necessary dependencies using pip install -r requirements.txt
+  * Built the UI using tkinter which can be run with ordinary python compilation i.e 
+  ```python app_name.py```
+  or
+  ```python3 app_name.py```
+  <br></br>
+  > **_NOTE 📝_**
+  > * The speech recoginition module throws a SSL not verified error due to firewall rules enabled over the intranet.
+  > * Replacing the speech recoginition module with VOSK model , VOSK is an offine speech to text API.
+  > * Install the appropiate modal from <a href="https://alphacephei.com/vosk/models"> here </a>
+  > * Converted all the images to base 64 format to improve portability.
+  <br></br>
+  * Install vosk using the command ```pip install vosk```
+  * Install pyinstaller using the command ``` pip install pyinstaller --trusted-host=pypi.python.org --trusted-host=pypi.org --trusted-host=files.pythonhosted.org```
+  * Convert the whole app into an executable file using ```pyinstaller --onefile appname.py``` or ```python -m PyInstaller ./appname.py –onefile 
+  * The executable can be found in the **dist** folder
   
-  
+  >**_Constraints ⚠️_**
+   ><h4> Challenges faced while working on the voice assistant </h4>
   
 
 
