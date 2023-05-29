@@ -183,6 +183,16 @@
   ![Screenshot (21)](https://user-images.githubusercontent.com/129254225/231447335-31232ce8-860f-4177-8dbc-c359a9457220.png)
 
   ![Screenshot (22)](https://user-images.githubusercontent.com/129254225/231447350-d20ece51-80e8-4083-8b58-b5f54be8d0db.png)
+  
+  <h3> 3) Testing Chaincode's </h3>
+  
+  * Using the base fabcar chaincode template provided by the fabric
+  * To access this chaincode - ssh to the server system and move in to the directory named */fabric-samples/chaincode/fabcar/javascript*
+  * Deploy the chaincode to the network using the command ```startFabric.sh javascript``` which is present inside the directory named */fabric-samples/fabcar/
+  * On successful execution, the chaincode will be deployed all the peer nodes and 2 organizations namely org1 and org2 along with a channel will be created.
+
+  
+  
 
 
   
