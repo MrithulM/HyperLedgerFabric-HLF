@@ -220,8 +220,8 @@
   ### Installation
   
   * <b> Major dependencies </b>
-    * Anaconda 
-    * Python 3.7 and above
+    * <a href="https://www.anaconda.com/download"> Anaconda </a>
+    * <a href="https://www.python.org/downloads/"> Python 3.7 and above </a>
     * Rasa framework
   * <b> Package dependencies </b>
     * requests
@@ -237,6 +237,17 @@
   * Activate the created environment using ```activate {env_name}```
   * Once activated install rasa using ```pip3 install rasa```
   * To create a fresh boilerplate project use ```rasa init``` command
+  * To run local rasa server use ```rasa run``` command
+  * Incase of <a href="https://rasa.com/docs/rasa/custom-actions/">custom actions</a> being used
+     * Open another anaconda prompt
+     * Run ```rasa run actions``` command
+  * The server is running and the endpoint - http://localhost:5005/webhooks/rest/webhook will be available to post data in the form of JSON with the template:
+  > {
+  >    "message": user,
+  >    "sender": "user123"
+  > }
+  
+  
   
   
   
