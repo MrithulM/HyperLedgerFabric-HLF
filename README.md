@@ -267,8 +267,10 @@
   * Convert the whole app into an executable file using ```pyinstaller --onefile appname.py``` or ```python -m PyInstaller ./appname.py –onefile 
   * The executable can be found in the **dist** folder
   
-  >**_Constraints ⚠️_**
+  **_Constraints ⚠️_**
+   
    ><h4> Challenges faced while working on the voice assistant </h4>
+   
    > * Accessing the speech recognition API from the intranetwork due to firewall rules (Consider <a href="https://alphacephei.com/vosk/models"> VOSK </a> instead)
    > * The RASA server points version mismatch error like **'from typing import any Error: ImportError: No module named 'typing''**. This can be fixed by reinstalling the appropiate version of the typing module **Eg: pip install typing==3.10.0.0**
    > * The voice input cuts after a specified duration, this is fixed by running the voice input in the background and listening only when the user holds the voice button to provide appropriate output.
