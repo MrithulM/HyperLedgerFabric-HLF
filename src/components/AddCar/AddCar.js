@@ -38,6 +38,7 @@ export default function AddCar(props) {
       model: name,
       colour,
       owner,
+      isNew: true,
     };
     try {
       await axios.post("http://4.246.223.78:8080/api/addcar", details);

@@ -3,11 +3,14 @@ import Menu from "./components/Menu/Menu";
 import { useState } from "react";
 import CarModel from "./components/CarModel/CarModel";
 import axios from "axios";
+import TransactionModal from "./components/Transaction/TransactionModal";
 function App() {
   const [addScreenActive, setAddScreenActive] = useState(false);
   const [carModalActive, setcarModelActive] = useState(false);
   //CarId of the active car CLICKED
   const [clickedCar, setClickedCar] = useState("");
+  const [transaction, setTransaction] = useState(null);
+  const [transactionActive, setTransactionActive] = useState(false);
   const addScreenHandler = () => {
     setAddScreenActive(true);
   };
@@ -53,8 +56,30 @@ function App() {
       console.log(err);
     }
   };
+  const transactionLogsHandler = async () => {
+    setTransactionActive(true);
+    try {
+      const res = await axios.get(
+        "http://4.246.223.78:8080/api/fetchtransaction"
+      );
+      setTransaction(JSON.parse(res.data.response));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const closeTransactionHandler = () => {
+    setTransactionActive(false);
+  };
   return (
     <>
+      {transactionActive && transaction ? (
+        <TransactionModal
+          transactions={transaction}
+          closeTransaction={closeTransactionHandler}
+        />
+      ) : (
+        ""
+      )}
       {carModalActive ? (
         <CarModel carModalClose={carModalClose} clickedCar={clickedCar} />
       ) : (
@@ -64,6 +89,7 @@ function App() {
         addScreenHandler={addScreenHandler}
         deleteCarHandler={deleteCarHandler}
         changeOwnerHandler={changeOwnerHandler}
+        transactionLogsHandler={transactionLogsHandler}
       />
       <Menu
         addScreenActive={addScreenActive}

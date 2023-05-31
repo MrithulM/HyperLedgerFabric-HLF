@@ -4,14 +4,18 @@ import CarModel from "../CarModel/CarModel";
 
 export default function CarCard(props) {
   const [touchActive, setTouchActive] = useState(false);
-  const { img, color, docType, make, model, owner } = props.record;
+  const { img, color, docType, make, model, owner, isNew } = props.record;
   return (
     <>
       <div className={`card`}>
         <div className="details-container">
-          <div class="ribbon ribbon-top-left">
-            <span>NEW!</span>
-          </div>
+          {isNew ? (
+            <div class="ribbon ribbon-top-left">
+              <span>NEW!</span>
+            </div>
+          ) : (
+            ""
+          )}
 
           <div className="poster-container">
             <img
