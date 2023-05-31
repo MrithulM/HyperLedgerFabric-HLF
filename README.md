@@ -5,6 +5,13 @@
   
   Additionally, Hyperledger provides robust identity management, allowing participants to control their data and access to the network. This permissioned architecture makes it a secure and efficient blockchain solution for enterprise-level applications.
   
+  ## Instructions on settingup
+  
+  * Git clone the repository
+  * Install docker, fabric-samples and NodeJs in the system using the steps below.
+  * Unzip fabric-server.zip.
+  * Find the server.js file inside the fabcar folder
+  
   ## Prerequisites
   
   1. cURL
